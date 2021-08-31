@@ -2,8 +2,12 @@ FROM node:alpine
 
 WORKDIR /usr/app
 
+COPY ./package.json ./
+RUN yarn
 COPY ./ ./
 
-RUN npm install
+CMD [ "yarn", "start" ]
 
-CMD [ "npm", "start" ]
+# docker build -t brunoalencar/simpleweb .  
+# docker run -p 5000:3000 brunoalencar/simpleweb
+# docker exec -it containerId sh
