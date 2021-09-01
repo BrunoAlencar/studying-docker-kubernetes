@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - '3000:3000' # outside:inside
+    volumes:
+      - /app/node_modules
+      - .:/app
+    # stdin_open: true
+    environment:
+      - REACT_APP_AUTHOR_NAME=João Bruno Mélo de Alencar
+      # - CHOKIDAR_USEPOLLING=true
+# docker-compose up

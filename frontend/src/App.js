@@ -6,7 +6,13 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
-        <p>Bye there!</p>
+        <p>Hi there!</p>
+        <small>
+          <hr />
+          <strong>Coded by: </strong>
+          <br />
+          <i>{process.env.REACT_APP_AUTHOR_NAME}</i>
+        </small>
       </header>
     </div>
   );
