@@ -1,0 +1,24 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN yarn install
+
+COPY . .
+
+CMD ["yarn", "start"]
+
+# docker build -f Dockerfile.dev .
+# docker run -it -p 3000:3000 IMAGE_ID
+# pwd -> present working directory
+# docker run -p 3000:3000 -v $(pwd):/app IMAGE_ID
+# docker build -f Dockerfile.dev -t brunoalencar/frontend:latest .
+# docker run -it -p 3000:3000 \
+#   -v /app/node_modules \
+#   -v $(pwd):/app \
+#   brunoalencar/frontend
+# docker run -it -p 3000:3000 \
+#   -v /app/node_modules \
+#   -v ~/frontend:/app \
+#   brunoalencar/frontend
