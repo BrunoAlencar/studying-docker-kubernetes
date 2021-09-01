@@ -3,6 +3,11 @@ services:
   redis-server:
     image: 'redis'
   node-app:
+    restart: always
     build: .
     ports:
       - '3000:3000'
+# docker-compose up --build
+# docker-compose up -d
+# docker-compose down
+# docker-compose ps (only on the same folder)
